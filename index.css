@@ -1,4 +1,11 @@
 * {
 	font-size: 16px;
   font-family: 'Quicksand', sans-serif;
+
+@media (min-width: 450px) {
+    .record{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+    
 }
