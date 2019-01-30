@@ -1,11 +1,127 @@
-* {
-	font-size: 16px;
-  font-family: 'Quicksand', sans-serif;
 
-@media (min-width: 450px) {
-    .record{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+:root{
+    --red: #ed1d24;
+}
+
+body {
+    max-width: 980px;
+    margin: auto;
+    font-family: 'Quicksand', sans-serif;
+    background: #f9f9f9;
+}
+li{
+    list-style-type: none;
+}
+a {
+    color: black;
+	text-decoration: none;
+}
+a:hover {
+	color: #444;
+}
+header{
+    background: var(--red);
+    display: flex;
+    justify-content: space-around;
     
-    
+}
+header #logo{
+  width: 120px;
+  float: left;
+}
+header #logo img{
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+}
+
+header p{
+  text-transform: uppercase;
+  color: white;
+  width: 0 auto;
+}
+
+
+.header-nav-menu{
+    display: none;
+}
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -5px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+nav .menu{
+  display: none;
+}
+
+input[type:checkbox]:checked ~ nav .menu{
+  display: block;
+}
+/*end of humbrger menu*/
+
+header .description{
+  display: flex;
+  align-items: flex-end;
 }
